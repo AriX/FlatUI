@@ -11,4 +11,6 @@
 
 @interface PBFlatButton : UIButton
 @property (strong, nonatomic) UIColor *mainColor;
+@property (strong, nonatomic) UIColor *alternateColor;
+@property (strong, nonatomic) UIFont *font;
 @end

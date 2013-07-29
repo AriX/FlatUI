@@ -30,15 +30,36 @@
     return self;
 }
 
+- (void)setMainColor:(UIColor *)mainColor {
+    _mainColor = mainColor;
+    [self appearanceButton];
+}
+
+- (void)setAlternateColor:(UIColor *)alternateColor {
+    _alternateColor = alternateColor;
+    [self appearanceButton];
+}
+
+- (void)setFont:(UIFont *)font {
+    _font = font;
+    [self appearanceButton];
+}
+
 - (void)appearanceButton {
-    _backgroundColor = [UIColor clearColor];
-    _mainColor = [[PBFlatSettings sharedInstance] mainColor];
-    
+    if (!_backgroundColor)
+        _backgroundColor = [UIColor clearColor];
+    if (!_alternateColor)
+        _alternateColor = [UIColor whiteColor];
+    if (!_mainColor)
+        _mainColor = [[PBFlatSettings sharedInstance] mainColor];
+    if (!_font)
+        _font = [[PBFlatSettings sharedInstance] font];
+
     [self setBackgroundColor:_backgroundColor];
     [self setTitleColor:_mainColor forState:UIControlStateNormal];
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [self.titleLabel setFont:[[PBFlatSettings sharedInstance] font]];
+    [self setTitleColor:_alternateColor forState:UIControlStateHighlighted];
+    [self setTitleColor:_alternateColor forState:UIControlStateSelected];
+    [self.titleLabel setFont:_font];
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
