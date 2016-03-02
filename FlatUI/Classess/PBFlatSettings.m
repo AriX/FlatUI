@@ -37,9 +37,8 @@
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     
-    NSDictionary *_titleTextAttributes = @{UITextAttributeTextColor: [UIColor blackColor],
-                                    UITextAttributeTextShadowColor : [UIColor clearColor],
-                                            UITextAttributeFont : [_font fontWithSize:20.0f]};
+    NSDictionary *_titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor],
+                                           NSFontAttributeName: [_font fontWithSize:20.0f]};
     
     [[UINavigationBar appearance] setTitleTextAttributes:_titleTextAttributes];
     // remove shadow

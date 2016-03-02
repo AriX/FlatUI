@@ -45,13 +45,11 @@
     UIImage *normalBackgroundImage = [UIImage imageWithColor:[[PBFlatSettings sharedInstance] mainColor] size:CGSizeMake(10.0f, 40.0f) andRoundSize:5.0f];
     UIImage *selectedBackgroundImage = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(10.0f, 40.0f) andRoundSize:5.0f];
     
-    NSDictionary *attributes = @{UITextAttributeFont: [[PBFlatSettings sharedInstance] font],
-                                UITextAttributeTextColor: [[PBFlatSettings sharedInstance] mainColor],
-                                UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
-                                UITextAttributeTextShadowColor: [UIColor clearColor]};
+    NSDictionary *attributes = @{NSFontAttributeName: [[PBFlatSettings sharedInstance] font],
+                                 NSForegroundColorAttributeName: [[PBFlatSettings sharedInstance] mainColor]};
     [self setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
-    NSDictionary *highlightedAttributes = @{UITextAttributeTextColor: [UIColor whiteColor]};
+    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     [self setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
     
     [self setBackgroundImage:selectedBackgroundImage

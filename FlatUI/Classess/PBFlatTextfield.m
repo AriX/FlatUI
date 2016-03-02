@@ -57,7 +57,7 @@
 }
 - (void)drawPlaceholderInRect:(CGRect)rect {
     [_placeholderTextColor setFill];
-    [[self placeholder] drawInRect:rect withFont:_font];
+    [[self placeholder] drawInRect:rect withAttributes:@{NSFontAttributeName: _font}];
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
